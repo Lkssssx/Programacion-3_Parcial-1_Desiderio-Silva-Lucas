@@ -1,0 +1,237 @@
+/* ===== VARIABLES ===== */
+:root {
+    --color-primary: #FF6B35;        /* Naranja vibrante - estimula el apetito y llama a la acción */
+    --color-primary-dark: #E24E1B;   /* Naranja rojizo profundo - perfecto para hovers y acentos */
+    --color-primary-light: #FFDBCF;  /* Melocotón muy suave - ideal para los botones de categorías no activos */
+    --color-bg: #FDFCF9;             /* Blanco roto cálido - súper limpio, hace que las fotos de comida destaquen */
+    --color-hd-bg: #2B2624;          /* Gris oscuro cálido (tono café) */
+    --color-nav-bg: #36302D;         /* Nav oscuro a juego, elegante y moderno */
+    --color-nav-hover: #4A433F;      /* Nav hover suave */
+    --color-text: #403936;           /* Gris pardo oscuro */
+    --color-text-light: #FFFFFF;     /* Texto sobre fondos oscuros */
+    --color-success: #10B981;        /* Verde esmeralda moderno - da sensación de frescura y éxito */
+    --color-error: #EF4444;          /* Rojo coral - alerta clara pero moderna */
+    --color-price: #059669;          /* Verde oscuro elegante - resalta el dinero sin desentonar */
+    --color-btn-add: #F3F4F6;        /* Gris muy claro para botones neutros */
+    --color-input-bg: #FFFFFF;       /* Input blanco puro para que contraste sutilmente con el fondo de la página */
+    --color-input-border: #E5E7EB;   /* Borde gris muy suave y moderno */
+    --color-shadow: rgba(0, 0, 0, 0.2); /* Las sombras transparentes evitan que la página se vea manchada */
+    --border-radius: 0.8rem;         
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    margin:0px;
+    padding: 0px;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 10px;
+    background-color: var(--color-bg);
+    width: 100%;
+    min-width: 115rem;
+    min-height: 50rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95); /* Encoge el elemento al 95% de su tamaño real */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Reduce la sombra para dar la ilusión de profundidad */
+    transition: all 0.1s ease; 
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: var(--color-hd-bg);
+    margin-bottom: 3rem;
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 4rem;
+    color: var(--color-primary);
+    margin: 0;
+    width: auto;
+}
+
+header a {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    text-decoration: none;
+    border: 2px solid var(--color-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+header a:hover {
+    background-color: var(--color-primary);
+    filter: none;
+}
+
+/* ===== MAIN ===== */
+main {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 2rem
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+
+#productsCart {
+    grid-column: 1 / 5; /* Le decimos que ocupe desde la columna 1 hasta la línea 5 (es decir, 4 columnas de ancho) */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+
+/* ===== SIN ARTICLES ===== */
+.no-products {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    grid-column: 1 / -1; /* ocupa las 3 columnas del grid */
+    margin-bottom: 3rem;
+}
+
+/* ===== ARTICLES ===== */
+article {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 8px var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+article hr {
+    display: none;
+}
+
+p, a, label {
+    font-size: 1.5rem;
+}
+
+.nombre {
+    font-size: 2rem;
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.precio {
+    color: var(--color-price);
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 5px var(--color-shadow);
+    margin: 1rem 0px 2rem 0px;
+    object-fit: cover;
+}
+
+/* ===== BOTÓN ELIMINAR ===== */
+.eliminar-producto {
+    padding: 1.2rem;
+    background-color: var(--color-error);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: auto; /* empuja el botón al fondo de la card */
+}
+
+.eliminar-producto:hover {
+    filter: brightness(90%);
+}
+
+/* ===== TOTAL ===== */
+.checkout-container {
+    grid-column: 5;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    width: 100%;
+    height: 20rem;
+    position: sticky; 
+    top: 2rem; /* El total bajará en la pantalla persiguiendo al usuario mientras scrollea */
+}
+
+#total {
+    display: flex;
+    flex-direction: column;
+    height: 8rem;
+}
+
+#total p {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color-price);
+    text-align: center;
+}
+
+.btn-finalizar {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.btn-finalizar:hover {
+    filter: brightness(90%);
+}
+
+
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    background-color: var(--color-nav-bg);
+    text-align: center;
+}
+
+footer p, footer a {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    margin: 0px;
+}

@@ -1,0 +1,326 @@
+/* ===== VARIABLES ===== */
+:root {
+    --color-primary: #FF6B35;        /* Naranja vibrante - estimula el apetito y llama a la acción */
+    --color-primary-dark: #E24E1B;   /* Naranja rojizo profundo - perfecto para hovers y acentos */
+    --color-primary-light: #FFDBCF;  /* Melocotón muy suave - ideal para los botones de categorías no activos */
+    --color-bg: #FDFCF9;             /* Blanco roto cálido - súper limpio, hace que las fotos de comida destaquen */
+    --color-hd-bg: #2B2624;          /* Gris oscuro cálido (tono café) - menos agresivo que el negro puro */
+    --color-nav-bg: #36302D;         /* Nav oscuro a juego, elegante y moderno */
+    --color-nav-hover: #4A433F;      /* Nav hover suave */
+    --color-text: #403936;           /* Gris pardo oscuro - más agradable a la vista que el negro total (#333) */
+    --color-text-light: #FFFFFF;     /* Texto sobre fondos oscuros */
+    --color-success: #10B981;        /* Verde esmeralda moderno - da sensación de frescura y éxito */
+    --color-error: #EF4444;          /* Rojo coral - alerta clara pero moderna */
+    --color-price: #059669;          /* Verde oscuro elegante - resalta el dinero sin desentonar */
+    --color-btn-add: #F3F4F6;        /* Gris muy claro para botones neutros */
+    --color-input-bg: #FFFFFF;       /* Input blanco puro para que contraste sutilmente con el fondo de la página */
+    --color-input-border: #E5E7EB;   /* Borde gris muy suave y moderno */
+    --color-shadow: rgba(0, 0, 0, 0.2); /* Las sombras transparentes evitan que la página se vea manchada */
+    
+    --border-radius: 0.8rem;         
+    --transition: all 0.3s ease;
+}
+
+/* ===== BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Verdana, Tahoma, sans-serif;
+    font-size: 10px;
+    background-color: var(--color-bg);
+    min-width: 145rem;
+    min-height: 50rem;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3rem;
+    color: var(--color-primary);
+}
+
+
+p, a, label {
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+/* ===== IMÁGENES ===== */
+img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    box-shadow: 0px 0px 5px var(--color-shadow);
+    margin: 1rem 0px 2rem 0px;
+    object-fit: cover;
+}
+
+/* ===== BOTONES ===== */
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95); /* Encoge el elemento al 95% de su tamaño real */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Reduce la sombra para dar la ilusión de profundidad */
+    transition: all 0.1s ease; 
+}
+
+a:hover {
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+article button {
+    padding: 1.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 100%;
+    transition: var(--transition);
+}
+
+article button:hover {
+    background-color: var(--color-primary-dark);
+    filter: none;
+}
+
+/* ===== NAV LATERAL ===== */
+#main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: var(--color-nav-bg);
+    padding-top: 1rem;
+}
+
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#main-nav ul li a {
+    display: block;
+    padding: 2rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#main-nav ul li a:hover {
+    background-color: var(--color-nav-hover);
+    border-left: 3px solid var(--color-primary);
+    filter: none;
+}
+
+/* ===== HEADER ===== */
+header {
+    padding: 2rem;
+    margin: 0px 0px 2rem 200px;
+    background-color: var(--color-hd-bg);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 8rem;
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+    flex: 1; /* empuja el footer al fondo */
+    margin-left: 200px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0 3rem;
+}
+
+/* ===== CATEGORÍAS ===== */
+#lista-categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+
+/* ===== BOTONES DE CATEGORÍA MEJORADOS ===== */
+.button-categoria {
+    background-color: var(--color-primary-light);
+    color: var(--color-text); /* Texto oscuro para que contraste y se lea bien */
+    min-width: 140px;
+    border-radius: 50px; 
+    font-size: 1.6rem;
+    border: none;
+    font-weight: bold;
+    margin: 1rem;
+    padding: 1rem 2rem;
+    transition: var(--transition);
+    box-shadow: 0 2px 4px var(--color-shadow);
+}
+
+/* Efecto al pasar el mouse */
+.button-categoria:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light); /* El texto se vuelve blanco */
+    transform: translateY(-1px); /* El botón "flota" hacia arriba */
+}
+
+
+/* Clase para la categoría que esté seleccionada actualmente */
+.clicked {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: scale(1.05); /* Se hace un poquito más grande */
+}
+
+/* ===== BUSCADOR ===== */
+
+.search-label {
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-top: 2rem;
+
+}
+
+#buscarProducto {
+    width: 60vw;
+    padding: 12px 16px;
+    font-size: 16px;
+    color: var(--color-text);
+    background-color: var(--color-input-bg);
+    border: 2px solid var(--color-input-border);
+    border-radius: 8px;
+    outline: none;
+    transition: var(--transition); /* Hace que el cambio de estado sea fluido */
+}
+
+/* El estado :focus se activa cuando el usuario hace clic en el input */
+#buscarProducto:focus {
+    border-color: var(--color-primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 8px rgba(232, 160, 32, 0.2); /* Un color exterior */
+}
+
+/* ===== PRODUCTOS ===== */
+
+.productos-destacados {
+    text-align: center;
+    font-size: 3.2rem;
+    color: var(--color-hd-bg); /* Usamos el gris oscuro elegante, no el naranja */
+    margin: 4rem 0 3rem 0; /* Buen espacio por arriba y por abajo para que respire */
+    position: relative;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+
+.productos-destacados::after {      /* usamos ::after para que aparezca justo después del texto */
+    content: ""; /* Obligatorio para que aparezca */
+    display: block;
+    width: 90%; 
+    height: 4px; 
+    background-color: var(--color-primary); 
+    margin: 1.5rem auto 0 auto; 
+    border-radius: var(--border-radius);
+}
+
+#contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+#no-productos {
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--color-error);
+    grid-column: 1 / -1; /* Hace que ocupe todas las columnas sin importar cuántas columnas haya */
+    text-decoration: underline;
+    text-align: center;
+}
+
+.nombre {
+    font-size: 2rem;
+    height: 7rem;
+}
+
+.descripcion {
+    height: 7rem;
+    margin-bottom: 1rem;
+}
+
+.precio {
+    color: var(--color-price);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+
+/* Cada producto como una card */
+article {
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    max-width: none; /* sacamos el max-width para que ocupe la columna entera */
+}
+
+/* Estado base: El span está invisible y sin estorbar */
+.agregar-producto-rs {
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden; /* Hace que no intercepte clics cuando está invisible */
+    transition: all 0.1s ease;
+    font-weight: 500;
+    margin-left: 10px; /* Para separarlo un poco del botón */
+}
+
+/* Estado activo: Cuando le agreguemos esta clase desde JS, aparecerá suavemente */
+.agregar-producto-rs.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.correctly-added {
+    color: var(--color-success);
+    font-weight: bold;
+}
+
+.not-added {
+    color: var(--color-error);
+    font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-left: 200px;
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--color-nav-bg);
+    text-align: center;
+}
+
+footer p, footer a {
+    color: var(--color-text-light);
+}
