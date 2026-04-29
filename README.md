@@ -59,13 +59,25 @@ La terminal mostrará una URL (generalmente `http://localhost:5173`). Abrila en 
 ## 📁 Estructura del Proyecto
 
 ```
-📦 food-store/
-├── 📂 assets/       → Imágenes de los productos y recursos gráficos
-├── 📂 css/          → Hojas de estilo divididas por vistas
-├── 📂 data/         → Base de datos inicial de productos y categorías (data.ts)
-├── 📂 pages/        → Vistas de la aplicación (home y cart) con HTML y TypeScript
-├── 📂 types/        → Interfaces TypeScript para tipado estricto (product.ts, category.ts)
-└── 📂 utils/        → Lógica reutilizable, incluyendo gestión de localStorage
+📂 src/
+├── 📂 assets/
+│   └── 📂 productos/        → Imágenes de los productos
+├── 📂 css/
+│   ├── home.css             → Estilos de la vista del catálogo
+│   └── cart.css             → Estilos de la vista del carrito
+├── 📂 pages/
+│   └── 📂 store/
+│       ├── 📂 home/
+│       │   ├── home.html    → Catálogo de productos
+│       │   └── home.ts      → Lógica: render, búsqueda, filtros
+│       └── 📂 cart/
+│           ├── cart.html    → Vista del carrito
+│           └── cart.ts      → Lógica: render, cantidades, total
+├── 📂 types/
+│   ├── product.ts           → Interfaces Product y CartItem
+│   └── categoria.ts         → Interface ICategoria
+└── 📂 data/
+    └── data.ts              → PRODUCTS y getCategories()
 ```
 
 ---
@@ -74,3 +86,4 @@ La terminal mostrará una URL (generalmente `http://localhost:5173`). Abrila en 
 
 **Lucas Desiderio Silva**  
 Parcial N°1 — Programación 3
+Universidad Tecnologica Nacional
