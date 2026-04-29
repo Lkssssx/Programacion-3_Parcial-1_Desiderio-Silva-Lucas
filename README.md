@@ -18,6 +18,8 @@ El estado de la aplicación (como el stock dinámico de los productos y los elem
 
 **Video:** https://drive.google.com/file/d/17PutqAJ8xOnz9MsjFVbI20-NkTaenIPw/view?usp=sharing
 
+---
+
 ## 🛠️ Tecnologías Utilizadas
 
 | Tecnología | Uso |
