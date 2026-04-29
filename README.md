@@ -1,83 +1,61 @@
-# Proyecto: Protección de Rutas (Educativo)
+# 🍔 Food Store - E-commerce
 
 ## ✍️ Descripción
+Food Store es un proyecto de e-commerce desarrollado con **HTML, CSS y TypeScript**. Simula una tienda de comida interactiva donde los usuarios pueden explorar productos, filtrar por categorías o por nombre, y gestionar un carrito de compras funcional. 
 
-Este es un proyecto de demostración creado con fines educativos para ilustrar un mecanismo básico de protección de rutas en el lado del cliente (frontend) utilizando **Vite** y **TypeScript**.
+El estado de la aplicación (como el stock dinámico de los productos y los elementos agregados al carrito) se maneja persistiendo los datos de forma local en el navegador mediante `localStorage`.
 
-El objetivo es mostrar cómo se puede restringir el acceso a ciertas páginas según el rol de un usuario (por ejemplo, `ADMIN` o `CLIENT`).
+**Características principales:**
+* Catálogo dinámico de productos generados a partir de datos estructurados.
+* Búsqueda y filtrado interactivo.
+* Carrito de compras con cálculo de totales y control de stock en tiempo real.
 
----
+## 🛠️ Tecnologías Utilizadas
+* HTML5 & CSS3
+* TypeScript
+* Vite (Entorno de desarrollo)
+* LocalStorage (Persistencia de datos)
 
-## ⚠️ ¡Importante! Nivel de Seguridad
+## 🚀 Instrucciones para ejecutarlo
 
-La protección de rutas implementada en este proyecto **NO ES SEGURA** y no debe utilizarse en un entorno de producción.
+Para correr este proyecto en tu entorno local, asegúrate de tener [Node.js](https://nodejs.org/) instalado. Puedes usar `npm` o `pnpm`.
 
-- **Razón**: La lógica de autenticación se basa en datos guardados en `localStorage` en el navegador del usuario.
-- **Riesgo**: Cualquier usuario con conocimientos técnicos básicos puede abrir las herramientas de desarrollador del navegador para inspeccionar, modificar o eliminar los datos de `localStorage`, obteniendo así acceso no autorizado a rutas protegidas.
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/Lkssssx/Parcial-1_Programacion-3_Desiderio-Silva-Lucas.git](https://github.com/Lkssssx/Parcial-1_Programacion-3_Desiderio-Silva-Lucas.git)
 
-Este enfoque es útil únicamente para fines de aprendizaje y para prototipos de bajo riesgo. La seguridad real debe implementarse en el **backend**.
+    Instalar las dependencias:
+    Abre la terminal en la carpeta raíz del proyecto y ejecuta:
+    Bash
 
----
+    npm install
+    # o si usas pnpm:
+    pnpm install
 
-## 🚀 Instalación y Uso
+    Iniciar el servidor de desarrollo:
+    Bash
 
-Se recomienda usar `pnpm` como gestor de paquetes para mayor eficiencia en el manejo de dependencias.
+    npm run dev
+    # o con pnpm:
+    pnpm dev
 
-### 1. Instalar pnpm
+    Abrir la aplicación:
+    La terminal te mostrará una URL (generalmente http://localhost:5173). Ábrela en tu navegador para ver y probar la tienda.
 
-Si no tienes `pnpm` instalado, puedes hacerlo fácilmente a través de `npm` (que viene con Node.js) ejecutando el siguiente comando en tu terminal:
+📁 Estructura del Proyecto
 
-```bash
-npm install -g pnpm
-```
+    assets/: Imágenes de los productos y recursos gráficos.
 
-### 2. Instalar Dependencias del Proyecto
+    css/: Hojas de estilo de la aplicación divididas por vistas.
 
-Una vez en la carpeta raíz del proyecto, instala las dependencias necesarias con `pnpm`:
+    data/: Contiene la base de datos inicial (data.ts) de productos y categorías.
 
-```bash
-pnpm install
-```
+    pages/: Vistas de la aplicación (home y cart) con sus respectivos archivos HTML y lógica en TypeScript.
 
-### 3. Ejecutar el Proyecto
+    types/: Interfaces de TypeScript para mantener un tipado estricto y seguro (product.ts, category.ts).
 
-Para iniciar el servidor de desarrollo de Vite, ejecuta:
+    utils/: Lógica reutilizable y modular, incluyendo la gestión de localStorage.
 
-```bash
-pnpm dev
-```
+👤 Autor
 
-La aplicación estará disponible en la URL que aparezca en la terminal (generalmente `http://localhost:5173`).
-
----
-
-## ⚙️ ¿Cómo Funciona la Protección de Rutas?
-
-El mecanismo es simple y se gestiona desde el código TypeScript en la carpeta `src/utils`:
-
-1.  **Inicio de Sesión**: Cuando un usuario se "loguea", su información (incluido su rol) se guarda como un string JSON en `localStorage`.
-2.  **Carga de Página Protegida**: Cada vez que se intenta cargar una página protegida (ej. la página de Administrador), se ejecuta un script de verificación (`checkAuhtUser` en `src/utils/auth.ts`).
-3.  **Verificación**: El script comprueba:
-    - Si existe un usuario en `localStorage`. Si no, redirige al login.
-    - Si el rol del usuario guardado coincide con el rol requerido para acceder a esa página. Si no coincide, lo redirige a una página de acceso denegado o a su "home" correspondiente.
-4.  **Cierre de Sesión (Logout)**: Al cerrar sesión, la información del usuario se elimina de `localStorage`.
-
----
-
-## 📁 Estructura del Proyecto
-
-```
-/
-├── src/
-│   ├── pages/                # Contiene las páginas de la aplicación
-│   │   ├── admin/            # Páginas solo para administradores
-│   │   ├── auth/             # Páginas de autenticación (login, registro)
-│   │   └── client/           # Páginas solo para clientes
-│   ├── types/                # Define las interfaces y tipos (IUser, Rol)
-│   └── utils/                # Lógica reutilizable
-│       ├── auth.ts           # Función principal de verificación de rol y sesión
-│       ├── localStorage.ts   # Funciones para leer/escribir en localStorage
-│       └── navigate.ts       # Función para redirigir al usuario
-├── package.json              # Dependencias y scripts
-└── README.md                 # Este archivo
-```
+    Lucas Desiderio Silva
