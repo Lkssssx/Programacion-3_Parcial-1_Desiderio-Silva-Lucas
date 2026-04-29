@@ -14,6 +14,10 @@ El estado de la aplicación (como el stock dinámico de los productos y los elem
 
 ---
 
+## Video Explicativo 📽️
+
+**Video:** https://drive.google.com/file/d/17PutqAJ8xOnz9MsjFVbI20-NkTaenIPw/view?usp=sharing
+
 ## 🛠️ Tecnologías Utilizadas
 
 | Tecnología | Uso |
@@ -85,5 +89,5 @@ La terminal mostrará una URL (generalmente `http://localhost:5173`). Abrila en 
 ## 👤 Autor
 
 **Lucas Desiderio Silva**  
-Parcial N°1 — Programación 3
+Parcial N°1 — Programación 3  
 Universidad Tecnologica Nacional
