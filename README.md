@@ -1,61 +1,76 @@
 # 🍔 Food Store - E-commerce
 
 ## ✍️ Descripción
-Food Store es un proyecto de e-commerce desarrollado con **HTML, CSS y TypeScript**. Simula una tienda de comida interactiva donde los usuarios pueden explorar productos, filtrar por categorías o por nombre, y gestionar un carrito de compras funcional. 
+
+Food Store es un proyecto de e-commerce desarrollado con **HTML, CSS y TypeScript**. Simula una tienda de comida interactiva donde los usuarios pueden explorar productos, filtrar por categorías o por nombre, y gestionar un carrito de compras funcional.
 
 El estado de la aplicación (como el stock dinámico de los productos y los elementos agregados al carrito) se maneja persistiendo los datos de forma local en el navegador mediante `localStorage`.
 
 **Características principales:**
-* Catálogo dinámico de productos generados a partir de datos estructurados.
-* Búsqueda y filtrado interactivo.
-* Carrito de compras con cálculo de totales y control de stock en tiempo real.
+
+- Catálogo dinámico de productos generados a partir de datos estructurados.
+- Búsqueda y filtrado interactivo.
+- Carrito de compras con cálculo de totales y control de stock en tiempo real.
+
+---
 
 ## 🛠️ Tecnologías Utilizadas
-* HTML5 & CSS3
-* TypeScript
-* Vite (Entorno de desarrollo)
-* LocalStorage (Persistencia de datos)
+
+| Tecnología | Uso |
+|---|---|
+| HTML5 & CSS3 | Estructura y estilos de la interfaz |
+| TypeScript | Lógica de la aplicación con tipado estricto |
+| Vite | Entorno de desarrollo y bundler |
+| LocalStorage | Persistencia de datos en el navegador |
+
+---
 
 ## 🚀 Instrucciones para ejecutarlo
 
-Para correr este proyecto en tu entorno local, asegúrate de tener [Node.js](https://nodejs.org/) instalado. Puedes usar `npm` o `pnpm`.
+Para correr este proyecto en tu entorno local, asegúrate de tener [Node.js](https://nodejs.org/) instalado. Podés usar `npm` o `pnpm`.
 
-1. **Clonar el repositorio:**
-   ```bash
-   git clone [https://github.com/Lkssssx/Parcial-1_Programacion-3_Desiderio-Silva-Lucas.git](https://github.com/Lkssssx/Parcial-1_Programacion-3_Desiderio-Silva-Lucas.git)
+**1. Clonar el repositorio:**
+```bash
+git clone https://github.com/Lkssssx/Parcial-1_Programacion-3_Desiderio-Silva-Lucas.git
+```
 
-    Instalar las dependencias:
-    Abre la terminal en la carpeta raíz del proyecto y ejecuta:
-    Bash
+**2. Instalar las dependencias:**
 
-    npm install
-    # o si usas pnpm:
-    pnpm install
+Abrí la terminal en la carpeta raíz del proyecto y ejecutá:
+```bash
+npm install
+# o si usás pnpm:
+pnpm install
+```
 
-    Iniciar el servidor de desarrollo:
-    Bash
+**3. Iniciar el servidor de desarrollo:**
+```bash
+npm run dev
+# o con pnpm:
+pnpm dev
+```
 
-    npm run dev
-    # o con pnpm:
-    pnpm dev
+**4. Abrir la aplicación:**
 
-    Abrir la aplicación:
-    La terminal te mostrará una URL (generalmente http://localhost:5173). Ábrela en tu navegador para ver y probar la tienda.
+La terminal mostrará una URL (generalmente `http://localhost:5173`). Abrila en tu navegador para ver y probar la tienda.
 
-📁 Estructura del Proyecto
+---
 
-    assets/: Imágenes de los productos y recursos gráficos.
+## 📁 Estructura del Proyecto
 
-    css/: Hojas de estilo de la aplicación divididas por vistas.
+```
+📦 food-store/
+├── 📂 assets/       → Imágenes de los productos y recursos gráficos
+├── 📂 css/          → Hojas de estilo divididas por vistas
+├── 📂 data/         → Base de datos inicial de productos y categorías (data.ts)
+├── 📂 pages/        → Vistas de la aplicación (home y cart) con HTML y TypeScript
+├── 📂 types/        → Interfaces TypeScript para tipado estricto (product.ts, category.ts)
+└── 📂 utils/        → Lógica reutilizable, incluyendo gestión de localStorage
+```
 
-    data/: Contiene la base de datos inicial (data.ts) de productos y categorías.
+---
 
-    pages/: Vistas de la aplicación (home y cart) con sus respectivos archivos HTML y lógica en TypeScript.
+## 👤 Autor
 
-    types/: Interfaces de TypeScript para mantener un tipado estricto y seguro (product.ts, category.ts).
-
-    utils/: Lógica reutilizable y modular, incluyendo la gestión de localStorage.
-
-👤 Autor
-
-    Lucas Desiderio Silva
+**Lucas Desiderio Silva**  
+Parcial N°1 — Programación 3
